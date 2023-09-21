@@ -1,16 +1,7 @@
-import React, { useState, useEffect } from "react";
-import {
-  Button,
-  Checkbox,
-  Form,
-  Input,
-  Upload,
-  IconForm,
-  Modal,
-  message,
-} from "antd";
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
-import { UploadOutlined, QuestionOutlined } from "@ant-design/icons";
+import React, { useState } from "react";
+import { Button, Form, Input, Upload, message } from "antd";
+import { useNavigate } from "react-router-dom";
+import { UploadOutlined } from "@ant-design/icons";
 import {
   customerfromsubmitByApi,
   uploadProductApi,
@@ -37,7 +28,6 @@ const Productfrom = () => {
         file.type === "image/png" ||
         file.type === "image/jpeg" ||
         file.type === "image/jpg";
-      // setPreview(undefined);
       console.log("file", file);
       if (!isPNG) {
         setImageError(`${file.name} is not a png file`);
@@ -47,15 +37,11 @@ const Productfrom = () => {
         const newFileList = fileList.slice();
         newFileList.splice(index, 1);
         setFileList([]);
-        // const objectUrl = URL.createObjectURL(file);
-        // setPreview(objectUrl);
-        // URL.revokeObjectURL(objectUrl)
         return isPNG || Upload.LIST_IGNORE;
       } else {
         setImageError("");
         setFileList([...fileList, file]);
         console.log("kkkooooo");
-        // setPreview(null);
         return false;
       }
     },
@@ -101,9 +87,7 @@ const Productfrom = () => {
           );
         },
         (err) => {
-          // console.log("error");
           setloading(false);
-          // swal('Customer', 'invalid Customer', 'success');
         }
       )
       .catch();
@@ -128,6 +112,7 @@ const Productfrom = () => {
           remember: true,
         }}
         onFinish={onFinish}
+        form={form}
         onFinishFailed={onFinishFailed}
         autoComplete="off"
       >
@@ -179,7 +164,7 @@ const Productfrom = () => {
             span: 16,
           }}
         >
-          <Button type="primary" htmlType="submit">
+          <Button type="primary" htmlType="submit" loading={loading}>
             Submit
           </Button>
         </Form.Item>

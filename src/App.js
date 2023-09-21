@@ -10,9 +10,12 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={ <Productfrom />} />
+          <Route path="/" element={<Productfrom />} />
           <Route path="Productinformation" element={<Productinformation />} />
-          <Route path="Reduxinformationdata" element={<Reduxinformationdata />} />
+          <Route
+            path="Reduxinformationdata"
+            element={<Reduxinformationdata />}
+          />
         </Routes>
       </BrowserRouter>
     </div>
