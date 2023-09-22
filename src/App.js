@@ -1,7 +1,7 @@
 import "./App.css";
-import Productfrom from "../src/components/Productfrom/index";
-import Productinformation from "../src/components/Productinformation/index";
-import Reduxinformationdata from "./components/Reduxinformationdata/index";
+import Create from "../src/components/Create/index";
+import Home from "../src/components/Home/index";
+import Uploadfrom from "../src/components/Uploadfrom/index";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -10,9 +10,13 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={ <Productfrom />} />
-          <Route path="Productinformation" element={<Productinformation />} />
-          <Route path="Reduxinformationdata" element={<Reduxinformationdata />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/Create" element={<Create />} />
+          <Route path="/edit/:id" element={<Uploadfrom />} />
+          {/* <Route
+            path="Reduxinformationdata"
+            element={<Reduxinformationdata />}
+          /> */}
         </Routes>
       </BrowserRouter>
     </div>

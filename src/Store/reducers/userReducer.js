@@ -1,10 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-// import { addUser } from "../../components/Productinformation";
+import {userList} from "../../components/Data"
 
 export const userSlice = createSlice({
   name: "users",
-  initialState: { value: [] },
+  initialState: { value: userList },
   reducers: {
     addUser: (state, action) => {
       state.value.push(action.payload);
@@ -15,11 +14,12 @@ export const userSlice = createSlice({
     },
 
     updateUsername: (state, action) => {
-      state.value.map((user) => {
-        if (user.id === action.payload.id) {
-          user.username = action.payload.username;
-        }
-      });
+      const { id, name, email} = action.payload;
+      const uu = state.value.find(user => user.id == id );
+      if(uu){
+        uu.name = name;
+        uu.email = email;
+      }
     },
   },
 });
