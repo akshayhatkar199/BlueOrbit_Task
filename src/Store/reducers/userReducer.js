@@ -1,5 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+<<<<<<< HEAD
 import {userList} from "../../components/Data"
+=======
+>>>>>>> 363dc1c9a69a53e5935ca7d0be383ced04ad2178
 
 export const userSlice = createSlice({
   name: "users",

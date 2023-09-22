@@ -10,6 +10,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
+<<<<<<< HEAD
           <Route path="/" element={<Home />} />
           <Route path="/Create" element={<Create />} />
           <Route path="/edit/:id" element={<Uploadfrom />} />
@@ -17,6 +18,14 @@ function App() {
             path="Reduxinformationdata"
             element={<Reduxinformationdata />}
           /> */}
+=======
+          <Route path="/" element={<Productfrom />} />
+          <Route path="Productinformation" element={<Productinformation />} />
+          <Route
+            path="Reduxinformationdata"
+            element={<Reduxinformationdata />}
+          />
+>>>>>>> 363dc1c9a69a53e5935ca7d0be383ced04ad2178
         </Routes>
       </BrowserRouter>
     </div>
